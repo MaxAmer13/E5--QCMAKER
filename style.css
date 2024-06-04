@@ -1,0 +1,274 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  .container {
+    width: 100vw;
+    height: 100vh;
+    background-color: #50727B;
+    /* Default styles for all screen sizes */
+    /* Media query for tablets (768px to 1024px) */
+    /* Media query for phones (up to 767px) */
+  }
+  .container .header {
+    width: 100%;
+    height: 14vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0px 0px 8px 2px #000;
+    padding: 2vw;
+    font-family: arial;
+    background-color: lightseagreen;
+  }
+  .container .header .logo {
+    font-size: 1.4rem;
+    font-variant: small-caps;
+    color: #fff;
+    font-weight: 900;
+    text-shadow: 1px 1px 1rem #000;
+    animation: logo 4s linear 0s infinite alternate;
+  }
+  .container .header .menu {
+    position: relative;
+  }
+  .container .header .menu a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 1.2rem;
+    padding: 1vw;
+    text-shadow: 0 0 1rem #000;
+    font-weight: 700;
+    box-shadow: 0px 0px 8px 0px #000;
+    border-radius: 4px;
+    margin: 4px;
+    animation: slide-in 2s linear 0s infinite alternate;
+  }
+  .container .header .menu a:hover {
+    font-size: 1.4rem;
+    font-family: inherit;
+    color: black;
+    box-shadow: 0px 0px 2px 2px #fff;
+  }
+  @media screen and (min-width: 768px) and (max-width: 1024px) {
+    .container .header .logo {
+      text-shadow: none;
+    }
+    .container .header .menu {
+      position: relative;
+    }
+    .container .header .menu a {
+      text-decoration: none;
+      text-shadow: none;
+    }
+    .container .header .menu a:hover {
+      font-size: 1.2rem;
+    }
+  }
+  @media screen and (max-width: 767px) {
+    .container .header {
+      height : 14vh;
+    }
+    .container .header .logo {
+      text-shadow: 1px 1px 1rem;
+    }
+    .container .header .menu {
+      display: none;
+    }
+  }
+  
+  /*# sourceMappingURL=style.css.map */
+  
+
+  html {
+    height: 100%;
+  }
+  
+  .login-box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 400px;
+    padding: 40px;
+    transform: translate(-50%, -50%);
+    background: lightseagreen;
+    box-sizing: border-box;
+    box-shadow: 0 15px 25px rgba(0,0,0,.6);
+    border-radius: 10px;
+  }
+  
+  .login-box h2 {
+    margin: 0 0 30px;
+    padding: 0;
+    color: #fff;
+    text-align: center;
+  }
+  
+  .login-box .user-box {
+    position: relative;
+  }
+  
+  .login-box .user-box input {
+    width: 100%;
+    padding: 10px 0;
+    font-size: 16px;
+    color: #fff;
+    margin-bottom: 30px;
+    border: none;
+    border-bottom: 1px solid #fff;
+    outline: none;
+    background: transparent;
+  }
+  .login-box .user-box label {
+    position: absolute;
+    top:0;
+    left: 0;
+    padding: 10px 0;
+    font-size: 16px;
+    color: #fff;
+    pointer-events: none;
+    transition: .5s;
+  }
+  
+  .login-box .user-box input:focus ~ label,
+  .login-box .user-box input:valid ~ label {
+    top: -20px;
+    left: 0;
+    color: #03e9f4;
+    font-size: 12px;
+  }
+  
+  .login-box form a {
+    position: relative;
+    display: inline-block;
+    padding: 10px 20px;
+    color: #03e9f4;
+    font-size: 16px;
+    text-decoration: none;
+    text-transform: uppercase;
+    overflow: hidden;
+    transition: .5s;
+    margin-top: 40px;
+    letter-spacing: 4px
+  }
+
+  .quizz-box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 800px;
+    padding: 40px;
+    transform: translate(-50%, -50%);
+    background: lightseagreen;
+    box-sizing: border-box;
+    box-shadow: 0 15px 25px rgba(0,0,0,.6);
+    border-radius: 10px;
+  }
+  
+  .quizz-box h2, h3{
+    text-align: center;
+  }
+
+  .btn button {
+    position: relative;
+    background-color: seagreen;
+    border-radius: 5px;
+    box-shadow: darkgreen 0px 4px 0px 0px;
+    padding: 15px;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    box-sizing: border-box;
+    width: 154px;
+    height: 49px;
+    color: #fff;
+    border: none;
+    font-size: 20px;
+    transition: all 0.3s ease-in-out;
+    z-index: 1;
+    overflow: hidden;
+    align-content: center;
+  }
+  
+  .btn button::before {
+    content: "";
+    background-color: darkgreen;
+    width: 0;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: width 700ms ease-in-out;
+    display: inline-block;
+  }
+  
+  .btn button:hover::before {
+    width: 100%;
+  }
+  
+  .question{
+    padding: 10px 15px;
+    font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+          "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+    border: 0 !important;
+    outline: 0 !important;
+    background: teal;
+    color: white;
+    cursor: pointer;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    margin: 10px 10px;
+  }
+  
+  .form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    margin-bottom: 15px;
+  }
+
+  .Tournament{
+    width: 350px;
+    height: 200px;
+    background-color: #fff;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    border-radius: 10px;
+    box-sizing: border-box;
+    padding: 20px 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top:20px;
+  }
+
+  .subtitle{
+    text-align: center;
+    font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+          "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+    margin: 0px 0 10px 0;
+    font-size: 20px;
+    font-weight: 800;
+  }
+  
+  .form-btn {
+    padding: 10px 15px;
+    font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+          "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+    border-radius: 20px;
+    border: 0 !important;
+    outline: 0 !important;
+    background: teal;
+    color: white;
+    cursor: pointer;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  }
+
+  .Tournament h1, label, input, .form-btn{
+    margin: 5px 5px
+  }
+
+  #Good{
+    display: flex;
+    flex-direction: row;
+  }
