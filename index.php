@@ -5,6 +5,7 @@
 	if($_SERVER["REQUEST_METHOD"] == "POST") {
 		// récupération des données du formulaire
 		$codeSubmit = $_POST['code'];
+        $pseudo = $_POST['pseudo'];
 
 		include_once('config.php');
 
@@ -15,6 +16,11 @@
 
 		// vérification des résultats de la requête
 		if($count == 1) {
+            $sqlCli = "INSERT INTO client(nomclient) VALUES ('".$pseudo."')";
+            $resultCli = mysqli_query($conn, $sqlCli);
+
+            // $sqlGive ="INSERT INTO donner(id_quizz,code,id_question,id_reponse,id_client)"
+
 			$_SESSION['code'] = $codeSubmit;
 			header("Location: quizz.php");
 			exit();
@@ -45,12 +51,12 @@
                 <h2>QCM</h2>
                 <form action="" method="post">
                     <div class="user-box">
-                        <input type="text">
-                    <label>Pseudonyme</label>
+                            <input type="text" name="pseudo" required>
+                        <label>Pseudonyme</label>
                     </div>
                     <div class="user-box">
-                        <input type="text" name="code" required>
-                    <label>Code du QCM</label>
+                            <input type="text" name="code" required>
+                        <label>Code du QCM</label>
                     </div>
                     <input type="submit" value="Envoyer"/>
                 </form>

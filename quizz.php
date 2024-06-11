@@ -15,9 +15,8 @@
             <div class="header">
                 <div class="logo">QCMAKER</div>
             </div>
-            <div class='quizz-box'>
+            <div class='quizz1-box'>
                 <h2>QCM</h2>
-                <h3>Les fruits</h3>
                 <form action="reponse.php" method="POST">
                 <?php 
                             // Use prepared statements to prevent SQL injection
@@ -43,10 +42,11 @@
                                 // Fetching answers for the current question
                                 $req2 = "SELECT  DISTINCT r.id_reponse, r.description
                                         FROM instance i
-                                        INNER JOIN donner d ON i.code = d.code
-                                        INNER JOIN reponse r ON d.id_reponse = r.id_reponse
-                                        INNER JOIN question q ON r.id_question = q.id_question
-                                        WHERE i.code = ? AND q.id_question = ?";
+                                        INNER JOIN quizz qz ON i.id_quizz = qz.id_quizz
+                                        INNER JOIN associer a ON qz.id_quizz = a.id_quizz
+                                        INNER JOIN question qu ON qu.id_question = a.id_question
+                                        INNER JOIN reponse r ON r.id_question=qu.id_question
+                                        WHERE i.code = ? AND qu.id_question = ?";
 
                                 $stmt2 = $conn->prepare($req2);
                                 $stmt2->bind_param("si", $code, $question);  // Assuming $code is a string and $question is an integer

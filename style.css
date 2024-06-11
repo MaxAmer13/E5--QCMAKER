@@ -3,6 +3,11 @@
     padding: 0;
     box-sizing: border-box;
   }
+
+  body{
+    background-color: #50727B;
+  }
+  
   .container {
     width: 100vw;
     height: 100vh;
@@ -80,10 +85,6 @@
   
   /*# sourceMappingURL=style.css.map */
   
-
-  html {
-    height: 100%;
-  }
   
   .login-box {
     position: absolute;
@@ -91,12 +92,14 @@
     left: 50%;
     width: 400px;
     padding: 40px;
+    margin:20px;
     transform: translate(-50%, -50%);
     background: lightseagreen;
-    box-sizing: border-box;
     box-shadow: 0 15px 25px rgba(0,0,0,.6);
     border-radius: 10px;
   }
+
+  
   
   .login-box h2 {
     margin: 0 0 30px;
@@ -151,23 +154,6 @@
     transition: .5s;
     margin-top: 40px;
     letter-spacing: 4px
-  }
-
-  .quizz-box {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 800px;
-    padding: 40px;
-    transform: translate(-50%, -50%);
-    background: lightseagreen;
-    box-sizing: border-box;
-    box-shadow: 0 15px 25px rgba(0,0,0,.6);
-    border-radius: 10px;
-  }
-  
-  .quizz-box h2, h3{
-    text-align: center;
   }
 
   .btn button {
@@ -272,3 +258,89 @@
     display: flex;
     flex-direction: row;
   }
+
+.quizz-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+}
+
+.quizz-box {
+  width: 400px;
+  padding: 40px;
+  background: lightseagreen;
+  box-shadow: 0 15px 25px rgba(0,0,0,.6);
+  border-radius: 10px;
+  margin: 20px;
+}
+
+.quizz1-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 800px;
+  padding: 40px;
+  background: lightseagreen;
+  box-shadow: 0 15px 25px rgba(0,0,0,.6);
+  border-radius: 10px;
+  margin: 20px;
+}
+
+.quizz-box h2, .quizz1-box h2 {
+  margin: 0 0 30px;
+  padding: 0;
+  color: #fff;
+  text-align: center;
+}
+
+.quizz-box .user-box {
+  position: relative;
+}
+
+.quizz-box .user-box input {
+  width: 100%;
+  padding: 10px 0;
+  font-size: 16px;
+  color: #fff;
+  margin-bottom: 30px;
+  border: none;
+  border-bottom: 1px solid #fff;
+  outline: none;
+  background: transparent;
+}
+
+.quizz-box .user-box label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 10px 0;
+  font-size: 16px;
+  color: #fff;
+  pointer-events: none;
+  transition: .5s;
+}
+
+.quizz-box .user-box input:focus ~ label,
+.quizz-box .user-box input:valid ~ label {
+  top: -20px;
+  left: 0;
+  color: #03e9f4;
+  font-size: 12px;
+}
+
+.quizz-box form a {
+  position: relative;
+  display: inline-block;
+  padding: 10px 20px;
+  color: #03e9f4;
+  font-size: 16px;
+  text-decoration: none;
+  text-transform: uppercase;
+  overflow: hidden;
+  transition: .5s;
+  margin-top: 40px;
+  letter-spacing: 4px;
+}

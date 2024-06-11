@@ -51,6 +51,6 @@
         </div>
 
 
-        <script src="poc.js"></script>
+        
     </body>
 </html>

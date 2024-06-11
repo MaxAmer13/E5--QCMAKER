@@ -1,51 +1,50 @@
+<!DOCTYPE html>
 <html>
-    <head>
-        <link href="style.css" rel="stylesheet"/>
-        <title>QcMaker</title>
-    </head>
-    <body>
-        <div class="container">
-            <div class="header">
-                <div class="logo">QCMAKER</div>
-            </div>
-            <div class="login-box">
-                <h2>Création QCM</h2>
-                <form>
-                    <div class="user-box">
-                        <input type="text" name="" required="">
-                    <label>Question</label>
-                    </div>
-                    <div class="user-box">
-                        <input type="text" name="" required="">
-                    <label>Thème de la question</label>
-                    </div>
-                    <select>
-                        <option value="" >Choisir un type de question</option>
-                        <option value="1" name="Vrai ou Faux">Vrai ou Faux</option>
-                        <option value="2" name="Question a choix multiple">Choix Multiple</option>
-                    </select>
-                    <div id="Good">
+<head>
+    <link href="style.css" rel="stylesheet"/>
+    <title>QcMaker</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="logo">QCMAKER</div>
+        </div>  
+        <form id="qcreator">
+            <div class="quizz-container">
+                <div class="quizz-box">
+                    <h2>Création Question</h2>
+                    <div id="questions">
                         <div class="user-box">
-                            <input type="text" name="" required="">
-                        <label>Reponse</label>
+                            <input type="text" name="desc" required="" placeholder="Question">
                         </div>
-                        <input type="checkbox"/>
-                    </div>
-                    <div id="Good">
                         <div class="user-box">
-                            <input type="text" name="" required="">
-                        <label>Reponse</label>
+                            <input type="text" name="theme" required="" placeholder='Thème de la question'>
                         </div>
-                        <input type="checkbox">
+                        <div class="user-box">
+                            <input type="number" name="points" required placeholder="Points de la question" min='0' max='20'/>
+                        </div>
+                        <select name="type">
+                            <option value="" >Choisir un type de question</option>
+                            <option value="Vrai ou Faux" >Vrai ou Faux</option>
+                            <option value="Choix Multiple">Choix Multiple</option>
+                        </select>
+                        <div id="Good">
+                            <div class="user-box">
+                                <input type="text" name="reponse0" required="" placeholder="Réponse">
+                            </div>
+                            <input type="checkbox" name="bonnereponse0"/>
+                        </div>
                     </div>
-                    <button class="question">Ajouter une réponse</button>
-                    </br>
-                    <button class="question">Ajouter une question</button>
-                    <input type="submit" value="Créer"/>
-                    </div>
-                    </div>
-                </form>
+                    <button class="question" onclick='addresp()'>Ajouter une réponse</button>
+                </div>
+                <!-- Add more quizz-box elements here if needed -->
             </div>
-        </div>
-    </body>
+            <button class="question" onclick='addquestion()'>Ajouter une question</button>
+            <button value="Créer" onclick='handleSubmit()'>Créer</button>
+            <!-- <input type="submit" value="créer"/> -->
+        </form>
+    </div>
+    <script src="script.js"></script>
+</body>
 </html>

@@ -2,28 +2,22 @@
     <head>
         <link href="style.css" rel="stylesheet"/>
         <title>QcMaker</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     </head>
     <body>
         <div class="container">
             <div class="header">
                 <div class="logo">QCMAKER</div>
+                <div class="menu">
+                    <a href="AllQuizz.php">Home</a>
+                    <a href="createqcm.php">CréationQCM</a>
+                    <a href="deconnexion.php">Se deconnecter</a>
+                </div>
             </div>
             <div class="form">
-                <div class="Tournament">
-                    <h1 class="subtitle">Quizz 4</h1>
-                    <label>Code de la route</label>
-                    <input type="text" class="code" disabled>
-                    <button class="form-btn">Générer le code</button>
-                    <label>Taux de réussite<span> 80</span>%</label>
-                </div>
-                <div class="Tournament">
-                    <h1 class="subtitle">Flore quizz</h1>
-                    <label>Les vegetaux</label>
-                    <input type="text" class="code" disabled>
-                    <button class="form-btn">Générer le code</button>
-                    <label>Taux de réussite<span> 65</span>%</label>
-                </div>
+                
             </div>
         </div>
+        <script src="script.js"></script>
     </body>
 </html>
