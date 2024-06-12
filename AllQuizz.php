@@ -8,6 +8,7 @@
         <div class="container">
             <div class="header">
                 <div class="logo">QCMAKER</div>
+                <button onclick="DumpBdd()">Dump bdd<button>
                 <div class="menu">
                     <a href="AllQuizz.php">Home</a>
                     <a href="createqcm.php">CréationQCM</a>

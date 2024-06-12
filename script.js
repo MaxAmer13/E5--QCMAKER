@@ -265,7 +265,6 @@ function insertQuestion(description, theme, type, responses, points) {
 
 
 function handleSubmit() {
-    event.preventDefault();
     for(let v =0; v<document.getElementsByClassName('quizz-box').length;v++){
     
         let description = document.getElementsByName('desc')[v].value;
@@ -285,4 +284,17 @@ function handleSubmit() {
 
         insertQuestion(description, theme, type, responses,points);
     }
+}
+
+
+function DumpBdd(){
+    $.ajax({
+        url: "https://gomfolio.alwaysdata.net/qcmaker/dump.php",
+        type: "post",
+        success: function(result, statut) {
+        },
+        error: function(error) {
+            console.error("un problème est survenu" + error);
+        }
+    });
 }

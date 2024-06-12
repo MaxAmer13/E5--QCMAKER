@@ -4,17 +4,17 @@
 	// vérification de l'envoi du formulaire
 	if($_SERVER["REQUEST_METHOD"] == "POST") {
 		// récupération des données du formulaire
-		$nomq = $_POST['nomq'];
-        $themeq = $_POST['themeq'];
-        $idadmin = $_SESSION['id_admin'];
+		$nomq = htmlentities($_POST['nomq']);
+        $themeq = htmlentities($_POST['themeq']);
+        $idadmin = htmlentities($_SESSION['id_admin']);
 
 		include_once('config.php');
 
-		// requête pour vérifier les informations de connexion dans la base de données
+		// insertion du quizz dans la bdd
 		$sql = "INSERT INTO quizz(nomq, Objectifq,datecreation,id_admin) VALUES('".$nomq."','".$themeq."',NOW(),'".$idadmin."')";
 		$result = mysqli_query($conn, $sql);
         $_SESSION['idQuizz'] = mysqli_insert_id($conn);
-        
+        header("Location: questions.php");
 
 		mysqli_close($conn);
 	}
@@ -37,7 +37,7 @@
             </div>
             <div class="login-box">
                 <h2>Création QCM</h2>
-                <form method="post" action="questions.php">
+                <form method="post">
                     <div class="user-box">
                         <input type="text" name="nomq" required="">
                     <label>Nom du QCM</label>
@@ -47,7 +47,7 @@
                     <label>Thème du QCM</label>
                     </div>
                     <div>
-                        <button class="form-btn">Créer</button>
+                        <input type='submit' class="form-btn" value="Créer" />
                     </div>
                     </div>
                 </form>
